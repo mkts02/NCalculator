@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NCalculator</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="epr1">EPR1</string>
+    <string name="epr2">EPR2</string>
+    <string name="epe1">EPE1</string>
+    <string name="epe2">EPE2</string>
+    <string name="eva1">EVA1</string>
+    <string name="eva2">EVA2</string>
+    <string name="eva3">EVA3</string>
+    <string name="cantidad_de_evas">Cantidad de Evas:</string>
+    <string name="Examen">Examen</string>
+    <string name="Presentacion">Presentacion</string>
+    <string name="Npresentacion">notaP</string>
+    <string name="Promedio">Promedio</string>
+    <string name="calcular_promedio">Calcular Promedio</string>
+    <string name="cristobal_herrera">Cristobal Herrera</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Email</string>
+    <string name="cristobalherreramkts_live_cl">cristobalherreramkts@live.cl</string>
+</resources>
