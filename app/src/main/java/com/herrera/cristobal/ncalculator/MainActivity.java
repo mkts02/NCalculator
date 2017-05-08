@@ -20,6 +20,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
@@ -267,6 +274,8 @@ public class MainActivity extends AppCompatActivity {
     public void calEximision(double promedio){
 
         int contaRojos=0;
+        double eva = 0;
+        double notas = 0;
 
         for(int j =0; j < layout.getChildCount(); j++) {
 
@@ -289,14 +298,17 @@ public class MainActivity extends AppCompatActivity {
                                 String edtValue2 = edtValue.getText().toString();
                                 String tagName = edtValue.getTag().toString();
                                 try{
-                                    double notas = parseDouble(edtValue2)/10;
+                                    notas = parseDouble(edtValue2)/10;
                                     //Log.d(tagName," "+notas);
                                     if(tagName.toLowerCase().contains("ep")){
-                                        if(notas>=4.0 && promedio>5.5 ){
-                                        }else{
+                                        if(notas<4.0){
                                             contaRojos =+1;
+                                            edtValue.getBackground().mutate().setColorFilter(getResources().getColor(R.color.colorDanger), PorterDuff.Mode.SRC_ATOP);
                                         }
-                                    }
+                                    }else{
+                                           eva += notas;
+
+                                        }
                                 }catch (NumberFormatException e){
                                       // Log.e("FATAL ERROR: ","ESTADO ALUMNO "+e);
                                 }
@@ -307,6 +319,10 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
+        }
+        eva = eva/4;
+        if(eva<4.0){
+            contaRojos=1;
         }
         if(contaRojos==0) {
             Toast.makeText(this, "Felicidades te eximiste", Toast.LENGTH_SHORT).show();
@@ -560,13 +576,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         promedio = promedio*0.7;
-        Log.d("presentacion: ",""+promedio);
+        //Log.d("presentacion: ",""+promedio);
         ex = (ex/10)*0.3;
         promedio = roundNumber(promedio+ex);
 
-        Log.d("promedio: ",""+promedio);
-        Log.d("examen: ",""+ex);
-
+        //Log.d("promedio: ",""+promedio);
+        //Log.d("examen: ",""+ex);
 
         if(promedio<4.0)
         {
@@ -679,6 +694,7 @@ public class MainActivity extends AppCompatActivity {
                                     EditText edtValue = ((EditText) edts);
                                     edtValue.setEnabled(true);
                                     edtValue.setText("");
+                                    edtValue.getBackground().mutate().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
 
                                 }
                             }
