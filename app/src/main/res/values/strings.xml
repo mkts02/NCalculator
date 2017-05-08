@@ -22,4 +22,5 @@
     <string name="nombre">Nombre</string>
     <string name="email">Email</string>
     <string name="cristobalherreramkts_live_cl">cristobalherreramkts@live.cl</string>
+    <string name="aplicacion_creada_por">Aplicacion Creada por</string>
 </resources>
